@@ -23,6 +23,7 @@
 // SOFTWARE.
 
 #import <UIKit/UIKit.h>
+#import "EWS_For_iOS-Swift.h"
 
 @interface ViewController : UIViewController<UITextFieldDelegate>
 

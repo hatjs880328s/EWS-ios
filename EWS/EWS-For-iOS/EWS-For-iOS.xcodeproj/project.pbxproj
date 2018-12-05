@@ -25,6 +25,10 @@
 		445077AE1D75360F004A9B38 /* EWSMailAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 445077AD1D75360F004A9B38 /* EWSMailAccountModel.m */; };
 		445077B11D753668004A9B38 /* EWSMailAttachmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 445077B01D753668004A9B38 /* EWSMailAttachmentModel.m */; };
 		445077B41D757839004A9B38 /* EWSMailAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 445077B31D757839004A9B38 /* EWSMailAttachment.m */; };
+		563D993021B7A233002DC3CB /* PKCS12.m in Sources */ = {isa = PBXBuildFile; fileRef = 563D992F21B7A233002DC3CB /* PKCS12.m */; };
+		563D993421B7A6EF002DC3CB /* PKCS12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D993321B7A6EF002DC3CB /* PKCS12.swift */; };
+		563D993621B7ACF9002DC3CB /* hello.txt in Resources */ = {isa = PBXBuildFile; fileRef = 563D993521B7ACF9002DC3CB /* hello.txt */; };
+		563D993821B7B077002DC3CB /* hello.pfx in Resources */ = {isa = PBXBuildFile; fileRef = 563D993721B7B077002DC3CB /* hello.pfx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +66,14 @@
 		445077B01D753668004A9B38 /* EWSMailAttachmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWSMailAttachmentModel.m; path = EWSModel/EWSMailAttachmentModel.m; sourceTree = "<group>"; };
 		445077B21D757839004A9B38 /* EWSMailAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWSMailAttachment.h; path = EWSManager/EWSMailAttachment.h; sourceTree = "<group>"; };
 		445077B31D757839004A9B38 /* EWSMailAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWSMailAttachment.m; path = EWSManager/EWSMailAttachment.m; sourceTree = "<group>"; };
+		563D992E21B7A233002DC3CB /* PKCS12.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKCS12.h; sourceTree = "<group>"; };
+		563D992F21B7A233002DC3CB /* PKCS12.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKCS12.m; sourceTree = "<group>"; };
+		563D993121B7A62E002DC3CB /* ppp.p123 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ppp.p123; sourceTree = "<group>"; };
+		563D993221B7A6EF002DC3CB /* EWS-For-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EWS-For-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		563D993321B7A6EF002DC3CB /* PKCS12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKCS12.swift; sourceTree = "<group>"; };
+		563D993521B7ACF9002DC3CB /* hello.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hello.txt; sourceTree = "<group>"; };
+		563D993721B7B077002DC3CB /* hello.pfx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hello.pfx; sourceTree = "<group>"; };
+		563D993921B7B0F1002DC3CB /* shanwzh.pfx */ = {isa = PBXFileReference; lastKnownFileType = file; path = shanwzh.pfx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,17 +106,24 @@
 		44394CCA1D6550C600C5A9E2 /* EWS-For-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				563D992A21B79F7D002DC3CB /* PFXManager */,
 				44394CEC1D65628C00C5A9E2 /* EWSModel */,
 				44394CE21D6550DC00C5A9E2 /* EWSManager */,
 				44394CCE1D6550C600C5A9E2 /* AppDelegate.h */,
 				44394CCF1D6550C600C5A9E2 /* AppDelegate.m */,
 				44394CD11D6550C600C5A9E2 /* ViewController.h */,
+				563D993521B7ACF9002DC3CB /* hello.txt */,
+				563D993721B7B077002DC3CB /* hello.pfx */,
+				563D993921B7B0F1002DC3CB /* shanwzh.pfx */,
+				563D993121B7A62E002DC3CB /* ppp.p123 */,
 				44394CD21D6550C600C5A9E2 /* ViewController.m */,
+				563D993321B7A6EF002DC3CB /* PKCS12.swift */,
 				44394CD41D6550C600C5A9E2 /* Main.storyboard */,
 				44394CD71D6550C600C5A9E2 /* Assets.xcassets */,
 				44394CD91D6550C600C5A9E2 /* LaunchScreen.storyboard */,
 				44394CDC1D6550C600C5A9E2 /* Info.plist */,
 				44394CCB1D6550C600C5A9E2 /* Supporting Files */,
+				563D993221B7A6EF002DC3CB /* EWS-For-iOS-Bridging-Header.h */,
 			);
 			path = "EWS-For-iOS";
 			sourceTree = "<group>";
@@ -155,6 +174,15 @@
 			name = EWSModel;
 			sourceTree = "<group>";
 		};
+		563D992A21B79F7D002DC3CB /* PFXManager */ = {
+			isa = PBXGroup;
+			children = (
+				563D992E21B7A233002DC3CB /* PKCS12.h */,
+				563D992F21B7A233002DC3CB /* PKCS12.m */,
+			);
+			name = PFXManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,6 +215,7 @@
 					44394CC71D6550C500C5A9E2 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = NVGL8H4887;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -213,9 +242,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				563D993821B7B077002DC3CB /* hello.pfx in Resources */,
 				44394CDB1D6550C600C5A9E2 /* LaunchScreen.storyboard in Resources */,
 				44394CD81D6550C600C5A9E2 /* Assets.xcassets in Resources */,
 				44394CD61D6550C600C5A9E2 /* Main.storyboard in Resources */,
+				563D993621B7ACF9002DC3CB /* hello.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,10 +260,12 @@
 				44394CD31D6550C600C5A9E2 /* ViewController.m in Sources */,
 				44394CE51D6556E600C5A9E2 /* EWSManager.m in Sources */,
 				445077A81D753537004A9B38 /* EWSItemContent.m in Sources */,
+				563D993421B7A6EF002DC3CB /* PKCS12.swift in Sources */,
 				445077AE1D75360F004A9B38 /* EWSMailAccountModel.m in Sources */,
 				445077B41D757839004A9B38 /* EWSMailAttachment.m in Sources */,
 				445077A51D753199004A9B38 /* EWSInboxListModel.m in Sources */,
 				44394CE81D65607F00C5A9E2 /* EWSAutodiscover.m in Sources */,
+				563D993021B7A233002DC3CB /* PKCS12.m in Sources */,
 				44394CF51D659B9C00C5A9E2 /* EWSHttpRequest.m in Sources */,
 				445077B11D753668004A9B38 /* EWSMailAttachmentModel.m in Sources */,
 				44394CD01D6550C600C5A9E2 /* AppDelegate.m in Sources */,
@@ -374,11 +407,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = NVGL8H4887;
 				INFOPLIST_FILE = "EWS-For-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "wangxk.EWS-For-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EWS-For-iOS/EWS-For-iOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -386,11 +423,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = NVGL8H4887;
 				INFOPLIST_FILE = "EWS-For-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "wangxk.EWS-For-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EWS-For-iOS/EWS-For-iOS-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
