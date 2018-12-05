@@ -30,4 +30,6 @@
 
 -(void)getItemContentWithEWSUrl:(NSString *)url item:(EWSInboxListModel *)item finishBlock:(void (^)(EWSItemContentModel *itemContentInfo, NSError *error))getItemContentBlock;
 
+-(void)sendEmail:(NSString *)url finishBlock:(void (^)(EWSItemContentModel *itemContentInfo, NSError *error))getItemContentBlock ;
+
 @end

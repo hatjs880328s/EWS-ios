@@ -38,8 +38,6 @@
     ViewController *vc = [[ViewController alloc] init];
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
-    PKCS128 *pkc = [[PKCS128 alloc ] init];
-    [pkc getNmae];
     return YES;
 }
 

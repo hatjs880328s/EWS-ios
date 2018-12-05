@@ -26,6 +26,7 @@
 #import "EWSHttpRequest.h"
 #import "EWSXmlParser.h"
 #import "EWSManager.h"
+#import "EWS_For_iOS-Swift.h"
 typedef void (^GetItemContentBlock)(EWSItemContentModel *itemContentInfo, NSError *error);
 
 @implementation EWSItemContent{
@@ -91,6 +92,24 @@ typedef void (^GetItemContentBlock)(EWSItemContentModel *itemContentInfo, NSErro
 
         //        NSLog(@"----itemContent--finish-------");
 //        NSLog(@"data:%@",[[NSString alloc] initWithData:xmlData encoding:NSUTF8StringEncoding]);
+        [eData appendData:xmlData];
+        [self requestFinishLoading];
+
+    } failure:^(NSError *error) {
+        _error = error;
+
+    }];
+}
+
+-(void)sendEmail:(NSString *)url finishBlock:(void (^)(EWSItemContentModel *itemContentInfo, NSError *error))getItemContentBlock{
+    _getItemContentBlock = getItemContentBlock;
+
+    NSString *soapXmlString = [[[EWSSendEmail alloc] init] sendEmailBodyXML];
+
+    [request ewsHttpRequest:soapXmlString url:url emailBoxInfo:((EWSManager *)[EWSManager sharedEwsManager]).ewsEmailBoxModel success:^(NSString *redirectLocation, NSData *xmlData) {
+
+        //        NSLog(@"----itemContent--finish-------");
+        //        NSLog(@"data:%@",[[NSString alloc] initWithData:xmlData encoding:NSUTF8StringEncoding]);
         [eData appendData:xmlData];
         [self requestFinishLoading];
 

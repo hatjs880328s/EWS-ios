@@ -81,7 +81,7 @@ typedef void (^GetAttachmentCompleteBlock)();
 
     [request ewsHttpRequest:soapXmlString url:url emailBoxInfo:((EWSManager *)[EWSManager sharedEwsManager]).ewsEmailBoxModel success:^(NSString *redirectLocation, NSData *data) {
 
-        [eData appendData:data];
+        [self->eData appendData:data];
         //        NSLog(@"data:%@",[[NSString alloc] initWithData:eData encoding:NSUTF8StringEncoding]);
         NSLog(@"---attachment---finish-------");
         [self requestFinishLoading];
@@ -95,11 +95,11 @@ typedef void (^GetAttachmentCompleteBlock)();
     [parser parserWithData:eData didStartDocument:^{
         
     } didStartElementBlock:^(NSString *elementName, NSString *namespaceURI, NSString *qName, NSDictionary *attributeDict) {
-        currentElement = elementName;
+        self->currentElement = elementName;
     } foundCharacters:^(NSString *string) {
         [self attachmentFoundCharacters:string];
     } didEndElementBlock:^(NSString *elementName, NSString *namespaceURI, NSString *qName) {
-        currentElement = nil;
+        self->currentElement = nil;
     } didEndDocument:^{
         [self mailAttachmentDidEndDocument];
     }];

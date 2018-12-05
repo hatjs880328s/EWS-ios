@@ -27,8 +27,7 @@
 		445077B41D757839004A9B38 /* EWSMailAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 445077B31D757839004A9B38 /* EWSMailAttachment.m */; };
 		563D993021B7A233002DC3CB /* PKCS12.m in Sources */ = {isa = PBXBuildFile; fileRef = 563D992F21B7A233002DC3CB /* PKCS12.m */; };
 		563D993421B7A6EF002DC3CB /* PKCS12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D993321B7A6EF002DC3CB /* PKCS12.swift */; };
-		563D993621B7ACF9002DC3CB /* hello.txt in Resources */ = {isa = PBXBuildFile; fileRef = 563D993521B7ACF9002DC3CB /* hello.txt */; };
-		563D993821B7B077002DC3CB /* hello.pfx in Resources */ = {isa = PBXBuildFile; fileRef = 563D993721B7B077002DC3CB /* hello.pfx */; };
+		563D993F21B7CB52002DC3CB /* EWSSendEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D993E21B7CB52002DC3CB /* EWSSendEmail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,12 +67,9 @@
 		445077B31D757839004A9B38 /* EWSMailAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWSMailAttachment.m; path = EWSManager/EWSMailAttachment.m; sourceTree = "<group>"; };
 		563D992E21B7A233002DC3CB /* PKCS12.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKCS12.h; sourceTree = "<group>"; };
 		563D992F21B7A233002DC3CB /* PKCS12.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKCS12.m; sourceTree = "<group>"; };
-		563D993121B7A62E002DC3CB /* ppp.p123 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ppp.p123; sourceTree = "<group>"; };
 		563D993221B7A6EF002DC3CB /* EWS-For-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EWS-For-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		563D993321B7A6EF002DC3CB /* PKCS12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKCS12.swift; sourceTree = "<group>"; };
-		563D993521B7ACF9002DC3CB /* hello.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hello.txt; sourceTree = "<group>"; };
-		563D993721B7B077002DC3CB /* hello.pfx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hello.pfx; sourceTree = "<group>"; };
-		563D993921B7B0F1002DC3CB /* shanwzh.pfx */ = {isa = PBXFileReference; lastKnownFileType = file; path = shanwzh.pfx; sourceTree = "<group>"; };
+		563D993E21B7CB52002DC3CB /* EWSSendEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWSSendEmail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,10 +108,6 @@
 				44394CCE1D6550C600C5A9E2 /* AppDelegate.h */,
 				44394CCF1D6550C600C5A9E2 /* AppDelegate.m */,
 				44394CD11D6550C600C5A9E2 /* ViewController.h */,
-				563D993521B7ACF9002DC3CB /* hello.txt */,
-				563D993721B7B077002DC3CB /* hello.pfx */,
-				563D993921B7B0F1002DC3CB /* shanwzh.pfx */,
-				563D993121B7A62E002DC3CB /* ppp.p123 */,
 				44394CD21D6550C600C5A9E2 /* ViewController.m */,
 				563D993321B7A6EF002DC3CB /* PKCS12.swift */,
 				44394CD41D6550C600C5A9E2 /* Main.storyboard */,
@@ -153,6 +145,7 @@
 				445077A71D753537004A9B38 /* EWSItemContent.m */,
 				445077B21D757839004A9B38 /* EWSMailAttachment.h */,
 				445077B31D757839004A9B38 /* EWSMailAttachment.m */,
+				563D993E21B7CB52002DC3CB /* EWSSendEmail.swift */,
 			);
 			name = EWSManager;
 			sourceTree = "<group>";
@@ -242,11 +235,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				563D993821B7B077002DC3CB /* hello.pfx in Resources */,
 				44394CDB1D6550C600C5A9E2 /* LaunchScreen.storyboard in Resources */,
 				44394CD81D6550C600C5A9E2 /* Assets.xcassets in Resources */,
 				44394CD61D6550C600C5A9E2 /* Main.storyboard in Resources */,
-				563D993621B7ACF9002DC3CB /* hello.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +264,7 @@
 				44394CEF1D6562E000C5A9E2 /* EWSEmailBoxModel.m in Sources */,
 				44394CF21D659B7C00C5A9E2 /* EWSXmlParser.m in Sources */,
 				445077AB1D753599004A9B38 /* EWSItemContentModel.m in Sources */,
+				563D993F21B7CB52002DC3CB /* EWSSendEmail.swift in Sources */,
 				44394CCD1D6550C600C5A9E2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
