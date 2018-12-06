@@ -59,7 +59,7 @@
         _eAddressTf = [[UITextField alloc] initWithFrame:CGRectMake(20, 80, ScreenWidth-40, 30)];
         _eAddressTf.placeholder = @"邮箱（必填）(Enter Email address)";
         _eAddressTf.delegate = self;
-        _eAddressTf.text = @"shanwzh@inspur.com";
+        _eAddressTf.text = @"ecloud@inspur.com";
         _eAddressTf;
     })];
     
@@ -67,7 +67,7 @@
         _ePasswordTf = [[UITextField alloc] initWithFrame:CGRectMake(20, 130, ScreenWidth-40, 30)];
         _ePasswordTf.placeholder = @"密码（必填）(Enter password)";
         _ePasswordTf.delegate = self;
-        _ePasswordTf.text = @"Ms2308967";
+        _ePasswordTf.text = @"oND-SK3-Uxn-zD5";
         _ePasswordTf;
     })];
     

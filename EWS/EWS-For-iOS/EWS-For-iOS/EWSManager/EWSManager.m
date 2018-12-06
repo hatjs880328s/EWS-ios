@@ -158,6 +158,10 @@ typedef void (^ManagerGetAttachmentCompleteBlock)(void);
     ///获取前10条数据
 -(void)getItemContentRecursion:(int)index{
     if (index<10) {//_inboxList.count
+        [[[EWSItemContent alloc] init] sendEmail:ewsEmailBoxModel.mailServerAddress finishBlock:^(EWSItemContentModel *itemContentInfo, NSError *error) {
+            NSLog(@"error??");
+        }];
+        return;
         [[[EWSItemContent alloc] init] getItemContentWithEWSUrl:ewsEmailBoxModel.mailServerAddress item:_inboxList[index] finishBlock:^(EWSItemContentModel *itemContentInfo, NSError *error) {
             if (error) {
                 self->_error = error;
