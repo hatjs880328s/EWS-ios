@@ -148,20 +148,12 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.spinner stopAnimating];
             });
-            NSLog(@"\n\n------------ Email fetched successfully, Now printing content of first email received-------------\n\n-");
             EWSItemContentModel *itemContentInfo = allItemArray[0];
-            NSLog(@"\n\n------------ First Email fetched Subject-------------\n\n%@\n\n-", itemContentInfo.itemSubject);
-            NSLog(@"\n\n------------ First Email HTML Body-------------\n\n%@\n\n-", itemContentInfo.itemContentHtmlString);
-            NSLog(@"\n\n------------ First Email Received date-------------\n\n%@\n\n-", itemContentInfo.dateTimeSentStr);
-            NSLog(@"\n\n------------ Email Content Size-------------\n\n%@\n\n-", itemContentInfo.size);
             if (itemContentInfo.attachmentList.count != 0) {
-                NSLog(@"\n\n------------ Email Has Attachment at path -------------\n\n%@-", ((EWSMailAttachmentModel *)itemContentInfo.attachmentList[0]).attachmentPath);
-//                [[EWSManager sharedEwsManager] getMailAllAttachmentWithItemContentInfo:itemContentInfo complete:^{
-//                    NSLog(@"---content:%@-%@-%@-%@-%@--",itemContentInfo.itemSubject,itemContentInfo.itemContentHtmlString,itemContentInfo.dateTimeSentStr,itemContentInfo.size,((EWSMailAttachmentModel *)itemContentInfo.attachmentList[0]).attachmentPath);
-//                }];
                 EWSMailAttachmentModel *temp = itemContentInfo.attachmentList[0];
                 [[EWSManager sharedEwsManager] getMailAttachmentWithAttachmentModel:temp complete:^{
-                    NSLog(@"-!!!!!--content:%@-%@-%@-%@-%@--",itemContentInfo.itemSubject,itemContentInfo.itemContentHtmlString,itemContentInfo.dateTimeSentStr,itemContentInfo.size,((EWSMailAttachmentModel *)itemContentInfo.attachmentList[0]).attachmentPath);
+                    NSLog(@"--MailAttachment-content:%@-%@-%@-%@-%@--\n\n\n",itemContentInfo.itemSubject,itemContentInfo.itemContentHtmlString,itemContentInfo.dateTimeSentStr,itemContentInfo.size,((EWSMailAttachmentModel *)itemContentInfo.attachmentList[0]).attachmentPath);
+                    NSLog(@"--MailAttachment-content-decrypted is:--");
                 }];
             }
         }
