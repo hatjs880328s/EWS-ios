@@ -59,7 +59,7 @@
         _eAddressTf = [[UITextField alloc] initWithFrame:CGRectMake(20, 80, ScreenWidth-40, 30)];
         _eAddressTf.placeholder = @"邮箱（必填）(Enter Email address)";
         _eAddressTf.delegate = self;
-        _eAddressTf.text = @"ecloud@inspur.com";
+        _eAddressTf.text = @"";
         _eAddressTf;
     })];
     
@@ -67,7 +67,7 @@
         _ePasswordTf = [[UITextField alloc] initWithFrame:CGRectMake(20, 130, ScreenWidth-40, 30)];
         _ePasswordTf.placeholder = @"密码（必填）(Enter password)";
         _ePasswordTf.delegate = self;
-        _ePasswordTf.text = @"oND-SK3-Uxn-zD5";
+        _ePasswordTf.text = @"";
         _ePasswordTf;
     })];
     
@@ -83,7 +83,7 @@
         _eServerAddress = [[UITextField alloc] initWithFrame:CGRectMake(20, 230, ScreenWidth-40, 30)];
         _eServerAddress.placeholder = @"邮箱服务器地址（选填）Mail server address (Optional)";
         _eServerAddress.delegate = self;
-        _eServerAddress.text = @"mail.inspur.com";
+        _eServerAddress.text = @"";
         _eServerAddress;
     })];
     
