@@ -32,6 +32,9 @@
 		5651866E21C0EAF100791E30 /* PKCS12.m in Sources */ = {isa = PBXBuildFile; fileRef = 5651866A21C0EAF100791E30 /* PKCS12.m */; };
 		5651866F21C0EAF100791E30 /* SMimeDecrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 5651866B21C0EAF100791E30 /* SMimeDecrypt.m */; };
 		5651867221C0EB8700791E30 /* IIStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651867121C0EB8700791E30 /* IIStringExtension.swift */; };
+		5651867D21C100E300791E30 /* macmime.p7m in Resources */ = {isa = PBXBuildFile; fileRef = 5651867A21C100E300791E30 /* macmime.p7m */; };
+		5651867E21C100E300791E30 /* hello_pri.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5651867B21C100E300791E30 /* hello_pri.pem */; };
+		5651867F21C100E300791E30 /* certificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 5651867C21C100E300791E30 /* certificate.cer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +83,9 @@
 		5651866A21C0EAF100791E30 /* PKCS12.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKCS12.m; sourceTree = "<group>"; };
 		5651866B21C0EAF100791E30 /* SMimeDecrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMimeDecrypt.m; sourceTree = "<group>"; };
 		5651867121C0EB8700791E30 /* IIStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IIStringExtension.swift; sourceTree = "<group>"; };
+		5651867A21C100E300791E30 /* macmime.p7m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = macmime.p7m; sourceTree = "<group>"; };
+		5651867B21C100E300791E30 /* hello_pri.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hello_pri.pem; sourceTree = "<group>"; };
+		5651867C21C100E300791E30 /* certificate.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = certificate.cer; sourceTree = "<group>"; };
 		D9C5B94C9BBED7E9A4ADA6D7 /* libPods-EWS-For-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EWS-For-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E87D9F16EDDDB59B7C4E7693 /* Pods-EWS-For-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EWS-For-iOS.debug.xcconfig"; path = "Target Support Files/Pods-EWS-For-iOS/Pods-EWS-For-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,6 +214,9 @@
 		5651867321C0F64D00791E30 /* CertificateSources */ = {
 			isa = PBXGroup;
 			children = (
+				5651867C21C100E300791E30 /* certificate.cer */,
+				5651867B21C100E300791E30 /* hello_pri.pem */,
+				5651867A21C100E300791E30 /* macmime.p7m */,
 			);
 			name = CertificateSources;
 			sourceTree = "<group>";
@@ -291,6 +300,9 @@
 			files = (
 				44394CDB1D6550C600C5A9E2 /* LaunchScreen.storyboard in Resources */,
 				44394CD81D6550C600C5A9E2 /* Assets.xcassets in Resources */,
+				5651867E21C100E300791E30 /* hello_pri.pem in Resources */,
+				5651867D21C100E300791E30 /* macmime.p7m in Resources */,
+				5651867F21C100E300791E30 /* certificate.cer in Resources */,
 				44394CD61D6550C600C5A9E2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
