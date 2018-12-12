@@ -15,6 +15,7 @@
 1. 关于证书的导入，目前方式是手动解析.pfx 转为带有公钥的.cer 文件和带有私钥的.pem文件；openssl cmd google即可，比较简单。
 2. 代码中使用了openssl库来做p7m文件的解析，使用了PKCS7_decrypted(pkcs7 *pkc, cerInfo *str ...)函数，函数第一个参数是PKCS7对象，就是我们需要解析的.p7m文件数据流；第二个就是第一步中提到的.cer文件内容字符串；第三个参数是.pem私钥内容
 
+`
 /// 使用数据流创建pkcs7对象
 private func createPKCS7(data: Data)->UnsafeMutablePointer<PKCS7>? {
 let receiptBIO = BIO_new(BIO_s_mem())
@@ -22,7 +23,9 @@ BIO_write(receiptBIO, (data as NSData).bytes, Int32(data.count))
 let pkcs7 = d2i_PKCS7_bio(receiptBIO, nil)
 return pkcs7
 }
+`
 
+`
 /// 将certificate文件数据流转换decrypted所能使用的对象
 X509 *getCert(const char *certificate) {
 BIO *membuf = BIO_new(BIO_s_mem());
@@ -30,7 +33,9 @@ BIO_puts(membuf, certificate);
 X509 *x509 = PEM_read_bio_X509(membuf, NULL, NULL, NULL);
 return x509;
 }
+`
 
+`
 /// 转换pem数据流信息为decrypted所能使用的对象
 EVP_PKEY *getKey(const char *privateKey) {
 BIO *membuf = BIO_new(BIO_s_mem());
@@ -38,6 +43,7 @@ BIO_puts(membuf, privateKey);
 EVP_PKEY *key = PEM_read_bio_PrivateKey(membuf, NULL, 0, NULL);
 return key;
 }
+`
 
 3. 幸福的使用char *data = decrypt(pkcs7, pkey, cert)函数得到解密后的信息。
 4. 关于以上代码的解析，apple的security-session有比较好的介绍与实践，这里也不多说。（如此晦涩，真的无奈）
