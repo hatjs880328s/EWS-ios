@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C18DFEE18D9FCF4F4DCCF54 /* libPods-EWS-For-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C5B94C9BBED7E9A4ADA6D7 /* libPods-EWS-For-iOS.a */; };
 		44394CCD1D6550C600C5A9E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44394CCC1D6550C600C5A9E2 /* main.m */; };
 		44394CD01D6550C600C5A9E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44394CCF1D6550C600C5A9E2 /* AppDelegate.m */; };
 		44394CD31D6550C600C5A9E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44394CD21D6550C600C5A9E2 /* ViewController.m */; };
@@ -25,9 +26,12 @@
 		445077AE1D75360F004A9B38 /* EWSMailAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 445077AD1D75360F004A9B38 /* EWSMailAccountModel.m */; };
 		445077B11D753668004A9B38 /* EWSMailAttachmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 445077B01D753668004A9B38 /* EWSMailAttachmentModel.m */; };
 		445077B41D757839004A9B38 /* EWSMailAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 445077B31D757839004A9B38 /* EWSMailAttachment.m */; };
-		563D993021B7A233002DC3CB /* PKCS12.m in Sources */ = {isa = PBXBuildFile; fileRef = 563D992F21B7A233002DC3CB /* PKCS12.m */; };
-		563D993421B7A6EF002DC3CB /* PKCS12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D993321B7A6EF002DC3CB /* PKCS12.swift */; };
 		563D993F21B7CB52002DC3CB /* EWSSendEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563D993E21B7CB52002DC3CB /* EWSSendEmail.swift */; };
+		5651866C21C0EAF100791E30 /* PKCS7Decrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 5651866421C0EAF100791E30 /* PKCS7Decrypt.m */; };
+		5651866D21C0EAF100791E30 /* PKCS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651866621C0EAF100791E30 /* PKCS.swift */; };
+		5651866E21C0EAF100791E30 /* PKCS12.m in Sources */ = {isa = PBXBuildFile; fileRef = 5651866A21C0EAF100791E30 /* PKCS12.m */; };
+		5651866F21C0EAF100791E30 /* SMimeDecrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 5651866B21C0EAF100791E30 /* SMimeDecrypt.m */; };
+		5651867221C0EB8700791E30 /* IIStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5651867121C0EB8700791E30 /* IIStringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,11 +69,19 @@
 		445077B01D753668004A9B38 /* EWSMailAttachmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWSMailAttachmentModel.m; path = EWSModel/EWSMailAttachmentModel.m; sourceTree = "<group>"; };
 		445077B21D757839004A9B38 /* EWSMailAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EWSMailAttachment.h; path = EWSManager/EWSMailAttachment.h; sourceTree = "<group>"; };
 		445077B31D757839004A9B38 /* EWSMailAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EWSMailAttachment.m; path = EWSManager/EWSMailAttachment.m; sourceTree = "<group>"; };
-		563D992E21B7A233002DC3CB /* PKCS12.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKCS12.h; sourceTree = "<group>"; };
-		563D992F21B7A233002DC3CB /* PKCS12.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKCS12.m; sourceTree = "<group>"; };
+		4F376F0FB1771412A02D2A4B /* Pods-EWS-For-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EWS-For-iOS.release.xcconfig"; path = "Target Support Files/Pods-EWS-For-iOS/Pods-EWS-For-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		563D993221B7A6EF002DC3CB /* EWS-For-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EWS-For-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
-		563D993321B7A6EF002DC3CB /* PKCS12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKCS12.swift; sourceTree = "<group>"; };
 		563D993E21B7CB52002DC3CB /* EWSSendEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EWSSendEmail.swift; sourceTree = "<group>"; };
+		5651866421C0EAF100791E30 /* PKCS7Decrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKCS7Decrypt.m; sourceTree = "<group>"; };
+		5651866521C0EAF100791E30 /* SMimeDecrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMimeDecrypt.h; sourceTree = "<group>"; };
+		5651866621C0EAF100791E30 /* PKCS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKCS.swift; sourceTree = "<group>"; };
+		5651866721C0EAF100791E30 /* PKCS12.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKCS12.h; sourceTree = "<group>"; };
+		5651866921C0EAF100791E30 /* PKCS7Decrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKCS7Decrypt.h; sourceTree = "<group>"; };
+		5651866A21C0EAF100791E30 /* PKCS12.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKCS12.m; sourceTree = "<group>"; };
+		5651866B21C0EAF100791E30 /* SMimeDecrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMimeDecrypt.m; sourceTree = "<group>"; };
+		5651867121C0EB8700791E30 /* IIStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IIStringExtension.swift; sourceTree = "<group>"; };
+		D9C5B94C9BBED7E9A4ADA6D7 /* libPods-EWS-For-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EWS-For-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E87D9F16EDDDB59B7C4E7693 /* Pods-EWS-For-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EWS-For-iOS.debug.xcconfig"; path = "Target Support Files/Pods-EWS-For-iOS/Pods-EWS-For-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C18DFEE18D9FCF4F4DCCF54 /* libPods-EWS-For-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +101,8 @@
 			children = (
 				44394CCA1D6550C600C5A9E2 /* EWS-For-iOS */,
 				44394CC91D6550C500C5A9E2 /* Products */,
+				7A1F8F46FCD92051337B77EC /* Pods */,
+				8C22DE915717C960DABE12C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,14 +117,14 @@
 		44394CCA1D6550C600C5A9E2 /* EWS-For-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				563D992A21B79F7D002DC3CB /* PFXManager */,
+				5651867021C0EB5000791E30 /* Utility */,
+				5651866321C0EAF100791E30 /* P7MDecrypt */,
 				44394CEC1D65628C00C5A9E2 /* EWSModel */,
 				44394CE21D6550DC00C5A9E2 /* EWSManager */,
 				44394CCE1D6550C600C5A9E2 /* AppDelegate.h */,
 				44394CCF1D6550C600C5A9E2 /* AppDelegate.m */,
 				44394CD11D6550C600C5A9E2 /* ViewController.h */,
 				44394CD21D6550C600C5A9E2 /* ViewController.m */,
-				563D993321B7A6EF002DC3CB /* PKCS12.swift */,
 				44394CD41D6550C600C5A9E2 /* Main.storyboard */,
 				44394CD71D6550C600C5A9E2 /* Assets.xcassets */,
 				44394CD91D6550C600C5A9E2 /* LaunchScreen.storyboard */,
@@ -167,13 +182,43 @@
 			name = EWSModel;
 			sourceTree = "<group>";
 		};
-		563D992A21B79F7D002DC3CB /* PFXManager */ = {
+		5651866321C0EAF100791E30 /* P7MDecrypt */ = {
 			isa = PBXGroup;
 			children = (
-				563D992E21B7A233002DC3CB /* PKCS12.h */,
-				563D992F21B7A233002DC3CB /* PKCS12.m */,
+				5651866521C0EAF100791E30 /* SMimeDecrypt.h */,
+				5651866B21C0EAF100791E30 /* SMimeDecrypt.m */,
+				5651866621C0EAF100791E30 /* PKCS.swift */,
+				5651866921C0EAF100791E30 /* PKCS7Decrypt.h */,
+				5651866421C0EAF100791E30 /* PKCS7Decrypt.m */,
+				5651866721C0EAF100791E30 /* PKCS12.h */,
+				5651866A21C0EAF100791E30 /* PKCS12.m */,
 			);
-			name = PFXManager;
+			path = P7MDecrypt;
+			sourceTree = "<group>";
+		};
+		5651867021C0EB5000791E30 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				5651867121C0EB8700791E30 /* IIStringExtension.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		7A1F8F46FCD92051337B77EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E87D9F16EDDDB59B7C4E7693 /* Pods-EWS-For-iOS.debug.xcconfig */,
+				4F376F0FB1771412A02D2A4B /* Pods-EWS-For-iOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8C22DE915717C960DABE12C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9C5B94C9BBED7E9A4ADA6D7 /* libPods-EWS-For-iOS.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +228,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44394CDF1D6550C600C5A9E2 /* Build configuration list for PBXNativeTarget "EWS-For-iOS" */;
 			buildPhases = (
+				C08D40E7EE6322F43EA91B89 /* [CP] Check Pods Manifest.lock */,
 				44394CC41D6550C500C5A9E2 /* Sources */,
 				44394CC51D6550C500C5A9E2 /* Frameworks */,
 				44394CC61D6550C500C5A9E2 /* Resources */,
@@ -243,6 +289,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C08D40E7EE6322F43EA91B89 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EWS-For-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		44394CC41D6550C500C5A9E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -251,18 +318,21 @@
 				44394CD31D6550C600C5A9E2 /* ViewController.m in Sources */,
 				44394CE51D6556E600C5A9E2 /* EWSManager.m in Sources */,
 				445077A81D753537004A9B38 /* EWSItemContent.m in Sources */,
-				563D993421B7A6EF002DC3CB /* PKCS12.swift in Sources */,
+				5651866F21C0EAF100791E30 /* SMimeDecrypt.m in Sources */,
 				445077AE1D75360F004A9B38 /* EWSMailAccountModel.m in Sources */,
 				445077B41D757839004A9B38 /* EWSMailAttachment.m in Sources */,
 				445077A51D753199004A9B38 /* EWSInboxListModel.m in Sources */,
 				44394CE81D65607F00C5A9E2 /* EWSAutodiscover.m in Sources */,
-				563D993021B7A233002DC3CB /* PKCS12.m in Sources */,
 				44394CF51D659B9C00C5A9E2 /* EWSHttpRequest.m in Sources */,
 				445077B11D753668004A9B38 /* EWSMailAttachmentModel.m in Sources */,
 				44394CD01D6550C600C5A9E2 /* AppDelegate.m in Sources */,
+				5651866D21C0EAF100791E30 /* PKCS.swift in Sources */,
+				5651866C21C0EAF100791E30 /* PKCS7Decrypt.m in Sources */,
+				5651866E21C0EAF100791E30 /* PKCS12.m in Sources */,
 				44410AF61D73C96100B5B2EE /* EWSInboxList.m in Sources */,
 				44394CEF1D6562E000C5A9E2 /* EWSEmailBoxModel.m in Sources */,
 				44394CF21D659B7C00C5A9E2 /* EWSXmlParser.m in Sources */,
+				5651867221C0EB8700791E30 /* IIStringExtension.swift in Sources */,
 				445077AB1D753599004A9B38 /* EWSItemContentModel.m in Sources */,
 				563D993F21B7CB52002DC3CB /* EWSSendEmail.swift in Sources */,
 				44394CCD1D6550C600C5A9E2 /* main.m in Sources */,
@@ -397,6 +467,7 @@
 		};
 		44394CE01D6550C600C5A9E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E87D9F16EDDDB59B7C4E7693 /* Pods-EWS-For-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -413,6 +484,7 @@
 		};
 		44394CE11D6550C600C5A9E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F376F0FB1771412A02D2A4B /* Pods-EWS-For-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

@@ -3,3 +3,7 @@
 //
 
 #import "PKCS12.h"
+#import "PKCS7Decrypt.h"
+#import "SMimeDecrypt.h"
+#import <openssl/pkcs7.h>
+#import "MF_Base64Additions.h"

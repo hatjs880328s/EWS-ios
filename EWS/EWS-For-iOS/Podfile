@@ -1,0 +1,12 @@
+platform :ios, '8.0'
+inhibit_all_warnings!
+
+def shared_pods
+    pod 'OpenSSL-Universal'
+    pod 'Base64', '~> 1.1.2'
+end
+
+
+target 'EWS-For-iOS' do
+    shared_pods
+end

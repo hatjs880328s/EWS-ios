@@ -1,0 +1,20 @@
+PODS:
+  - Base64 (1.1.2)
+  - OpenSSL-Universal (1.0.2.13)
+
+DEPENDENCIES:
+  - Base64 (~> 1.1.2)
+  - OpenSSL-Universal
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Base64
+    - OpenSSL-Universal
+
+SPEC CHECKSUMS:
+  Base64: cecfb41a004124895a7bcee567a89bae5a89d49b
+  OpenSSL-Universal: 401888162f11c33ebbd46f782d9229da35c61327
+
+PODFILE CHECKSUM: 1ca863be3d27ce0464b144feed1b0e6bf7acc94a
+
+COCOAPODS: 1.6.0.beta.2
