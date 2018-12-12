@@ -7,42 +7,48 @@
 //
 
 import Foundation
-//import CryptoSwift
 import Security
 
+/*
+ 这里是一个示例：
+ 需要的证书 & 解析的数据都已经持久化到本地
+ 需要解析的数据就是 获取附件中smime.p7m 返回的数据中<content></content>内的字符串 = encryptedStr
+ 获取下来encryptedStr 将它转为nsdata作为 [self.createPKCS7(data: debase64Data! as Data)]的参数传入即可
+ */
 class PKCS: NSObject {
     override init() { super.init() }
 
     @objc func cbcpkcs7(cerpath:String) -> String {
 
+        let realPath = Bundle.main.path(forResource: "certificate", ofType: "cer")!
+
         /// cer path is ok
-        let datass = try! Data(contentsOf: URL(string: cerpath)!)
-        let strss = String(data: datass, encoding: String.Encoding.ascii)
+        let datass = NSData(contentsOfFile: realPath)
+        let strss = String(data: datass! as Data, encoding: String.Encoding.ascii)
 
         /// private key is ok
-        let privateKeyPath = cerpath.replace(find: "certificate.cer", replaceStr: "hello_pri.pem")
-        let pridata = try! Data(contentsOf: URL(string: privateKeyPath)!)
-        let pristrss = String(data: pridata, encoding: String.Encoding.ascii)
+        let privateKeyPath = realPath.replace(find: "certificate.cer", replaceStr: "hello_pri.pem")
+        let pridata = NSData(contentsOfFile: privateKeyPath)
+        let pristrss = String(data: pridata! as Data, encoding: String.Encoding.ascii)
 
-        /// p7m file
-        let p7mfile = cerpath.replace(find: "certificate.cer", replaceStr: "smime.p7m")
-
-        /// pkcs7 container- create with p7m file
-        let pkcs7 = createPKCS7(path: p7mfile)
         /// pkcs7 container- create with exchange att file base 64 str
         /// 此处的base64.p7m是ews附件返回的base64串截取的内容，后缀手动写为p7m
-        let pathbase = cerpath.replace(find: "certificate.cer", replaceStr: "macmime2.p7m")
-        let base64Data = try! Data(contentsOf: URL(string: pathbase)!)
-        let debase64Data = NSData(base64Encoded: base64Data, options: NSData.Base64DecodingOptions.init(rawValue: 0))
+        let pathbase = realPath.replace(find: "certificate.cer", replaceStr: "macmime.p7m")
+        let base64Data = NSData(contentsOfFile: pathbase)
+        let debase64Data = NSData(base64Encoded: base64Data! as Data, options: NSData.Base64DecodingOptions.init(rawValue: 0))
         let pkcs7Data = self.createPKCS7(data: debase64Data! as Data)
         /// decrypt
         let decrypted = PKCS7Decrypt.decrypt(pkcs7Data, privateKey: pristrss, certificate: strss)
 
+        /// debase64
         let debase64Str = decode64(decrypted!)
+        print(debase64Str)
+
         return debase64Str
     }
 
-    func createPKCS7(path:String)->UnsafeMutablePointer<PKCS7>? {
+    /// 文件路径 生成 pkcs7 对象
+    private func createPKCS7(path:String)->UnsafeMutablePointer<PKCS7>? {
         do {
             guard let realPath = URL(string: path) else { return nil }
             let data = try Data(contentsOf: realPath)
@@ -54,7 +60,8 @@ class PKCS: NSObject {
         return nil
     }
 
-    func createPKCS7(data: Data)->UnsafeMutablePointer<PKCS7>? {
+    /// 数据流 生成 pkcs7 对象
+    private func createPKCS7(data: Data)->UnsafeMutablePointer<PKCS7>? {
         let receiptBIO = BIO_new(BIO_s_mem())
         BIO_write(receiptBIO, (data as NSData).bytes, Int32(data.count))
         let pkcs7 = d2i_PKCS7_bio(receiptBIO, nil)
@@ -66,24 +73,15 @@ class PKCS: NSObject {
         var str = base64Str
         str = str.replace(find: "\n", replaceStr: "")
         str = str.replace(find: "\r", replaceStr: "")
-        let decodedData = Data(base64Encoded: str, options: Data.Base64DecodingOptions.init(rawValue: 0))
-        /*
-         GB2312 & GBK
-         */
         let subStrsData = loopDecodeBASE64(base64Str: str)
 //        let gb2300 = CFStringConvertEncodingToNSStringEncoding(UInt32(CFStringEncodings.GB_18030_2000.rawValue))
-//        let gbk = CFStringConvertEncodingToNSStringEncoding(UInt32(CFStringEncodings.GBK_95.rawValue))
-//        let gb2312 = CFStringConvertEncodingToNSStringEncoding(UInt32(CFStringEncodings.GB_2312_80.rawValue))
-
 //        let decodedString1 = String(data: subStrsData, encoding: String.Encoding(rawValue: gb2312))
-//        let decodedString2 = String(data: subStrsData, encoding: String.Encoding(rawValue: gbk))
-//        let decodedString3 = String(data: subStrsData, encoding: String.Encoding(rawValue: gb2300))
-        let base64Data = Data(base64Encoded: str, options: Data.Base64DecodingOptions.ignoreUnknownCharacters)
 
         return subStrsData
     }
 
-    /// smime.p7m
+    /// 循环解析base64 4 * 6 = 3 * 8
+    /// 这里比较粗暴的解析了base64编码
     func loopDecodeBASE64(base64Str: String) -> String {
         let realBase64 = (base64Str as NSString).components(separatedBy: "filename=smime.p7m")[1]//filename=smime.p7m
         let eachLineNumCount: Int = 40
@@ -91,8 +89,12 @@ class PKCS: NSObject {
         let subStrs = realBase64.subStringWithNum(num: eachLineNumCount)
         for i in 0 ..< subStrs.count {
             let subStr = NSString.init(fromBase64String: subStrs[i])
-            guard let realSubStr = subStr as String? else { continue }
-            resultData = resultData.appending(realSubStr) as NSString
+            if let realSubStr = subStr as String? {
+                resultData = resultData.appending(realSubStr) as NSString
+            }else{
+                resultData = resultData.appending(subStrs[i]) as NSString
+            }
+
         }
         return resultData as String
     }

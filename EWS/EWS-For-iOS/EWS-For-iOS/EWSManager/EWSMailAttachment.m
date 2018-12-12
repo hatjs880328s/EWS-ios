@@ -26,6 +26,7 @@
 #import "EWSHttpRequest.h"
 #import "EWSXmlParser.h"
 #import "EWSManager.h"
+#import "EWS_For_iOS-Swift.h"
 
 typedef void (^GetAttachmentCompleteBlock)();
 
@@ -82,10 +83,12 @@ typedef void (^GetAttachmentCompleteBlock)();
     [request ewsHttpRequest:soapXmlString url:url emailBoxInfo:((EWSManager *)[EWSManager sharedEwsManager]).ewsEmailBoxModel success:^(NSString *redirectLocation, NSData *data) {
 
         [self->eData appendData:data];
-        NSLog(@"data:%@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-        NSLog(@"---attachment---finish-------");
+        NSLog(@"---attachment decrypted start-------");
         [self requestFinishLoading];
+        PKCS *pkc = [[PKCS alloc] init];
+        [pkc cbcpkcs7WithCerpath:@"nothing..."];
 
+        
     } failure:^(NSError *error) {
         NSLog(@"error:%@",error);
     }];
