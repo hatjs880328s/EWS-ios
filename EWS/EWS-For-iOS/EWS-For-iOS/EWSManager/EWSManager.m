@@ -91,9 +91,6 @@ typedef void (^ManagerGetAttachmentCompleteBlock)(void);
 }
 
 -(void)autodiscoverWithCompletion:(void(^)(BOOL success))completion {
-//    ewsEmailBoxModel.mailServerAddress = @"https://mail.inspur.com/EWS/Exchange.asmx";
-//    completion(true);
-//    return;
     [[[EWSAutodiscover alloc] init] autoDiscoverWithEmailAddress:ewsEmailBoxModel.emailAddress finishBlock:^(NSString *ewsUrl, NSError *error) {
         if (error) {
             NSLog(@"error:%@",error);

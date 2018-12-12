@@ -283,7 +283,7 @@
 /// 将公钥SecKeyRef转为 nsdata
 - (NSData *)getPublicKeyBitsFromKey:(SecKeyRef)givenKey {
 
-    static const uint8_t publicKeyIdentifier[] = "com.inspur.publickey";
+    static const uint8_t publicKeyIdentifier[] = "com.apple.publickey";
     NSData *publicTag = [[NSData alloc] initWithBytes:publicKeyIdentifier length:sizeof(publicKeyIdentifier)];
 
     OSStatus sanityCheck = noErr;
