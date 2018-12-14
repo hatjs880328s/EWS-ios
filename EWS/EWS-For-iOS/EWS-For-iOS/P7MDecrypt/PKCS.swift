@@ -40,6 +40,17 @@ class PKCS: NSObject {
         /// decrypt
         let decrypted = PKCS7Decrypt.decrypt(pkcs7Data, privateKey: pristrss, certificate: strss)
 
+
+        /// encrypt
+        let biodata = "HELLO,WORLD".data(using: String.Encoding.utf8)!
+        let receiptBIO = BIO_new(BIO_s_mem())
+        BIO_write(receiptBIO, (biodata as NSData).bytes, Int32(biodata.count))
+        let encrypted = PKCS7Decrypt.encrypt(receiptBIO, certificate: strss)
+        let decrypted2 = PKCS7Decrypt.decrypt(encrypted, privateKey: pristrss, certificate: strss)
+        let debase64Str2 = decode64(decrypted2!)
+        print(debase64Str2)
+
+        
         /// debase64
         let debase64Str = decode64(decrypted!)
         print(debase64Str)

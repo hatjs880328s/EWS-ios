@@ -32,28 +32,6 @@ EVP_PKEY *getKey(const char *privateKey) {
     BIO_puts(membuf, privateKey);
     EVP_PKEY *key = PEM_read_bio_PrivateKey(membuf, NULL, 0, NULL);
     return key;
-
-
-
-
-    ///custom
-//    BIO *bio_err;
-//    X509_REQ *x509=NULL;
-//    EVP_PKEY *pkey= NULL;
-//    EVP_PKEY *pubKey = NULL;
-//
-//    NSString *privateKeyFile = [SecurityManager privateKeyFileAndProof:YES];
-//    char const *privKeyPath =  [[NSFileManager defaultManager] fileSystemRepresentationWithPath:privateKeyFile];
-//    FILE *fp = fopen(privKeyPath, "r");
-//
-//    PEM_read_PrivateKey(fp, &pkey, NULL, NULL);
-//
-//    fclose(fp);
-//    CRYPTO_mem_ctrl(CRYPTO_MEM_CHECK_ON);
-//
-//    bio_err=BIO_new_fp(stderr, BIO_NOCLOSE);
-//
-//    PEM_write_PrivateKey(stdout,pkey,NULL,NULL,0,NULL, NULL);
 }
 
 
@@ -98,6 +76,27 @@ char *decrypt(PKCS7 *pkcs7, EVP_PKEY *pkey, X509 *cert) {
     return data;
 
 }
+
+PKCS7 *encryptd(const char *certificate, BIO *indata) {
+    X509 *cert = getCert(certificate);
+    if (!cert) {
+        return NULL;
+    }
+
+    STACK_OF(X509) *sk = sk_X509_new_null();
+    sk_X509_push(sk, cert);
+
+//    BIO *inBIO = BIO_new(BIO_s_mem());
+//    BIO_puts(inBIO, indata);
+
+
+    PKCS7* pkcs7_encrypt = PKCS7_encrypt(sk, indata, EVP_aes_128_cbc(), PKCS7_BINARY);
+    return pkcs7_encrypt;
+}
+
+
+
+
 /*
 decrypts a PKCS7 SMIME container with given private key and certificate
 */

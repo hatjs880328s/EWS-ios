@@ -21,4 +21,7 @@ decrypts a PKCS7 SMIME container with given private key and certificate
 This is just a wrapper function around the pure c code
 */
 + (NSString *)decrypt:(PKCS7 *)encrypted privateKey:(NSString *)privateKey certificate:(NSString *)certificate ;
+
++ (PKCS7 *)encrypt: (BIO *)strBIO certificate:(NSString *)certificate;
+
 @end

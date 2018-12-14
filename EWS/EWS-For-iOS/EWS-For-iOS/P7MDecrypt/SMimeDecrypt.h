@@ -21,4 +21,6 @@
 
 char *decrypt_smime(PKCS7 *encrypted, const char *privateKey, const char *certificate);
 
+PKCS7 *encryptd(const char *certificate, BIO *indata);
+
 #endif /* SMimeDecrypt_h */

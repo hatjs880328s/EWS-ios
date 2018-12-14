@@ -19,4 +19,17 @@
         return nil;
     }
 }
+
+
++(PKCS7 *)encrypt: (BIO *)strBIO certificate:(NSString *)certificate {
+//    const char *str = [strValue UTF8String];
+    const char *cert = [certificate UTF8String];
+    PKCS7 *encrypted = encryptd(cert, strBIO);
+    if (encrypted) {
+        return encrypted;
+    } else {
+        return nil;
+    }
+}
+
 @end
